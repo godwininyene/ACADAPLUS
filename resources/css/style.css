@@ -20,10 +20,10 @@ body{
 /*////////////******************   HEADINGS  ///////////////////////*/
 .primary-heading{
 	text-transform: uppercase;
+	font-family: oswald, sans-serif;
 	font-size: 3rem;
 	text-align: center;
-	font-weight: 200;
-	font-family: oswald, sans-serif;
+	font-weight: bold;
 	background-image: linear-gradient(to bottom, #0860b5 50%, #1e90ff 50%);
 	-moz-background-clip: text;
 	-webkit-background-clip:text;
@@ -31,9 +31,9 @@ body{
 }
 .secondary-heading{
 	color: #000;
-	font-size: 1.8rem;
-	font-weight: 200;
-	font-family: "helvetica neue";
+	font-size: 2rem;
+	font-family: 'helvetica neue', sans-serif;
+	font-weight: bold;
 	margin-bottom: .5rem;
 }
 
@@ -107,9 +107,9 @@ body{
 	text-align: center;
 }
 .logo-container span{
-	font-family: 'Sansita One', cursive;
+	font-family: "Sansita One", cursive;
     font-size: 3.2rem;
-    font-weight: 400;
+    font-weight: bold;
 }
 .logo-container span:last-of-type{
 	color: #1e90ff;
@@ -230,8 +230,6 @@ body{
 #show-case-container{
 	height: 85vh;
 	margin-top: .5rem;
-	background-size: cover;
-	background-position: center;
 	position: relative;
 }
 
@@ -242,6 +240,8 @@ body{
 	top: 0;
 	left: 0;
 	z-index: -1;
+	background-size: cover;
+	background-position: center;
 }
 #show-case-text-box{
 	position: absolute;
@@ -249,19 +249,18 @@ body{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 90%;
-	color: #fff;
 	text-align: center;
 }
 #rotate-text{
-	font-size: 5rem;
-	font-family: arial;
-	font-weight: 100;
+	color: #fff;
+	font-size: 4rem;
+	font-weight: bold;
 	word-spacing: .3rem;
 }
 
 #fixed-text{
 	font-size: 2.5rem;
-	font-weight: 100;
+	color: #b1acac;
 	margin-top: -2rem;
 	margin-bottom: 2.5rem;
 }
@@ -563,11 +562,11 @@ body{
 	font-size: 1.6rem;
 }
 .contact-text-box p{
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	line-height: 140%;
 	padding-top: .5rem;
 }
-.u-draw-line{ position: relative; }
+.u-draw-line{ position: relative;}
 
 .u-draw-line:before,
 .u-draw-line:after{
@@ -577,10 +576,10 @@ body{
     background-color: #c4c4c4;
     width: 42%;
     position: absolute;
-    top: 1.2rem;
+    top: 1.7rem;
 }
-.u-draw-line:before{ left: 5.5rem; }
-.u-draw-line:after{ right: 5.5rem; }
+.u-draw-line:before{ left: 5rem; }
+.u-draw-line:after{ right: 5rem; }
 
 .social-group{
 	display: flex;
@@ -705,50 +704,63 @@ body{
 
 /*////////////*****************   MEDIA QUERIES ///////////////////////*/
 
-@media screen and (max-width: 767px){
-	html{ font-size: 50%; }/* THIS REPRESENT 8PX 8/16*100=8*/ 
-
+@media screen and (max-width:  767px){
 	.container,
 	.news-slide{ 
 		flex-direction: column;
+		align-items: center;
 	}
+
 	.row .container .col-1-of-2,	
 	.row .container .col-1-of-4,
 	.row .container .col-1-of-3 { 
 		width: 70%;
-		margin: auto;
 		margin-bottom: 5rem;
 	}
-	.paragraph{ font-size: 2rem;}
+	.container .col-1-of-2:not(:last-child){ margin-right: 0rem; }
+	.container .col-1-of-3:not(:last-child){ margin-right: 0rem; }
+	.col-1-of-4:not(:last-child){ margin-right: 0rem; }
+
+
+	#header-left-content{ padding-left: 2rem;}
+	#header-logo-container { 
+		padding-left: 0; 
+		width: 70%;
+	}
+
+	#section-about{ padding: 7rem 0 15rem 0; }
+	#section-explore{ padding: 10rem 0; }
+	#section-why-usage{ padding: 5rem 0 10rem 0; }
+	#section-app-usage,
+	#section-testimonies,
+	#section-sch-demo,
+	#section-news,
+	#footer{ padding: 4rem 0; }
+
+	#rotate-text{
+		font-size: 3rem;
+		word-spacing: 0rem;
+	}
+
+	#fixed-text{
+		font-size: 2.5rem;
+		margin-top: 0rem;
+		margin-bottom: 2rem;
+		line-height: 1.5;
+	}
+
+	.primary-heading{ font-size: 2rem; }
+
 	.long-copy{
 		width: 90%;
 		margin-left: 5%;
-		font-size: 2rem;
 	}
-	.secondary-heading{ font-size: 2.25rem; }
-	.composition{ padding-bottom: 30rem;}
-	#rotate-text{ 
-		font-size: 2.5rem; 
-		text-transform: uppercase;
-	}
-	#fixed-text{ 
-		font-size: 2rem; 
-		margin-top: -1rem;
-	}
+
 	.partners-logo{ height: 3rem; }
 
 	#section-why-usage{
 		-webkit-clip-path: polygon( 0 0, 100% 0, 100% 92%, 0 100%);
 		clip-path: polygon( 0 0, 100% 0, 100% 92%, 0 100%);
-	}
-	.demo-form-container{
-		background-image:linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-			url(../img/booking-3.jpg);
-		background-size: contain;
-	}
-	#demo-form{
-		width: 70%;
-		margin: auto;
 	}
 
 	.story-container{
@@ -769,55 +781,60 @@ body{
 		transform: skewX(0deg);
 	}
 
+	.demo-form-container{
+		background-image:linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+			url(../img/booking-3.jpg);
+		background-size: contain;
+	}
+	#demo-form{
+		width: 70%;
+		margin: auto;
+	}
+
 	.news-photo-box{ height: auto; }
 	#login-form-container{ width: 80%; }
+
 	.u-draw-line:before,
 	.u-draw-line:after{ width: 34%; }
 
-	.contact-text-box h4,
-	.contact-text-box p
-	{ font-size: 1.75rem;}
-
-
-	#header-left-content{ padding-left: 2rem;}
-	#header-logo-container { 
-		padding-left: 0; 
-		width: 70%;
-	}
 
 }
 
-@media screen and (max-width: 320px){
-
+@media screen and (max-width: 600px){
 	.row .container .col-1-of-2,	
 	.row .container .col-1-of-4,
-	.row .container .col-1-of-3,
-	#demo-form,
-	.story-container { width: 90%;}
-
-	#rotate-text{ 
-		font-size: 1.5rem; }
-	#fixed-text{ 
-		font-size: 1.6rem; 
-		margin-top: .8rem;
-		line-height: 1.2;
+	.row .container .col-1-of-3 { 
+		width: 80%;
 	}
 
-	.primary-heading{ font-size: 2rem;}
-
-	#section-why-usage{
-		-webkit-clip-path: polygon( 0 0, 100% 0, 100% 97%, 0 100%);
-		clip-path: polygon( 0 0, 100% 0, 100% 97%, 0 100%);
+	#rotate-text{ font-size: 2.5rem; }
+	#fixed-text{ font-size: 2rem; }
+	.story-container{ 
+		width: 80%; 
+		padding-left: 2rem;
 	}
 
+	#demo-form{ width: 80%; }
 	.u-draw-line:before,
 	.u-draw-line:after{ display: none; }
+}
+
+@media screen and (max-width: 500px){
+	.row .container .col-1-of-2,	
+	.row .container .col-1-of-4,
+	.row .container .col-1-of-3 { 
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 320px){
+	html{ font-size: 50%; } /* THIS REPRESENT 8PX 8/16*100=8 */
+
 }
 
 
 @media screen and (min-width: 768px)and (max-width: 1023px){
 
-	html{ font-size: 56.25%; }/* THIS REPRESENT 9PX 9/16*100=9*/ 
 	.container,
 	.news-slide{ 
 		flex-wrap: wrap; 
@@ -830,9 +847,7 @@ body{
 		margin-bottom: 2rem;
 		margin-right: 0;
 	}
-	.paragraph{
-		font-size: 1.8rem;
-	}
+	
 	.long-copy{
 		width: 90%;
 		margin-left: 5%;
@@ -858,3 +873,6 @@ body{
 	{ font-size: 1.6rem;}
 
 }
+
+
+
